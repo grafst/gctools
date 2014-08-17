@@ -1,4 +1,5 @@
 <?php
+//Untersucht ob ein String deutsche Wörter enthält und gibt die Anzahl gefundenen Wörter zurück.
 function istext ($text)
 {
 	//Anzahl gefundene Woerter
