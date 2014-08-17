@@ -1,13 +1,13 @@
 <?php
 function istext ($text)
 {
-	//Anzahl gefundene Wörter
+	//Anzahl gefundene Woerter
 	$wordcount=0;
-	// Dictionary öffnen
+	// Dictionary oeffnen
 	$handle = @fopen("german.dic", "r");
 	
 	if ($handle) {
-		//Wörterbuch Zeilenweise (Wort für Wort) einlesen
+		//Woerterbuch Zeilenweise (Wort fuer Wort) einlesen
 		while (($wort = fgets($handle, 4096)) !== false) {
 			//Newline Charakter am ende des Wortes entfernen
 			$wort = rtrim($wort, "\r\n");
