@@ -1,15 +1,18 @@
 <?php
 function istext ($text)
 {
+	//Anzahl gefundene Wörter
 	$wordcount=0;
 	// Dictionary öffnen
 	$handle = @fopen("german.dic", "r");
 	
 	if ($handle) {
+		//Wörterbuch Zeilenweise (Wort für Wort) einlesen
 		while (($wort = fgets($handle, 4096)) !== false) {
+			//Newline Charakter am ende des Wortes entfernen
 			$wort = rtrim($wort, "\r\n");
+			//Wort im Text suchen
 			if (stripos("x".$text,$wort) >0) {
-				echo "Wort '$wort' gefunden<br/>";
 				$wordcount++;
 			}
 		}
@@ -18,14 +21,6 @@ function istext ($text)
 		}
 		fclose($handle);
 	}
-
-		return $wordcount;
+	return $wordcount;
 }
-if (istext("Koordinate")==true){
-		echo "Ist ein Text";
-	}else {
-		echo "ist kein Text";
-	}
-
-
 ?>
