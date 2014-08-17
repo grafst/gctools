@@ -1,5 +1,5 @@
 <?php
-
+include '../../functions/rot.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	//do the rotate
