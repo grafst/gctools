@@ -1,9 +1,4 @@
 <?php
-if istext("DeinefetteMutter"){
-		echo "Ist ein Text";
-	}else {
-		echo "ist kein Text";
-	}
 function istext ($text)
 {
 	$wordcount=0;
@@ -12,9 +7,9 @@ function istext ($text)
 	
 	if ($handle) {
 		while (($wort = fgets($handle, 4096)) !== false) {
-			echo $wort;
-			if (strpos("x".$text,$wort) !== false) {
-				echo "Wort '$wort' gefunden";
+			$wort = rtrim($wort, "\r\n");
+			if (stripos("x".$text,$wort) >0) {
+				echo "Wort '$wort' gefunden<br/>";
 				$wordcount++;
 			}
 		}
@@ -23,9 +18,14 @@ function istext ($text)
 		}
 		fclose($handle);
 	}
-	if ($wordcount > 0){
-		return true;
-	}
+
+		return $wordcount;
 }
+if (istext("Koordinate")==true){
+		echo "Ist ein Text";
+	}else {
+		echo "ist kein Text";
+	}
+
 
 ?>
