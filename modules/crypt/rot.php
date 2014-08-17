@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	echo '</table>';
 } else {
 	//show the form to enter a text
-	echo '<form action="/modules/crypt/rot.php" method="post"><textarea name="string"</textarea></form>';
+	echo '<form action="/modules/crypt/rot.php" method="post"><textarea name="string"></textarea></form>';
 }
 
 
